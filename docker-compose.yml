@@ -1,0 +1,53 @@
+version: "3"
+
+services:
+  main:
+    build: .
+    command: python ./main.py
+    network_mode: host
+    depends_on:
+      - pickle
+      - xml
+      - json
+      - yaml
+      - msgpack
+
+  pickle:
+    build:
+      context: ./
+      dockerfile: ./pickle/Dockerfile
+    command: python ./main.py
+    ports:
+      - 2001:2001
+
+  xml:
+    build:
+      context: ./
+      dockerfile: ./xml/Dockerfile
+    command: python ./main.py
+    ports:
+      - 2002:2002
+
+  json:
+    build:
+      context: ./
+      dockerfile: ./json/Dockerfile
+    command: python ./main.py
+    ports:
+      - 2003:2003
+
+  yaml:
+    build:
+      context: ./
+      dockerfile: ./yaml/Dockerfile
+    command: python ./main.py
+    ports:
+      - 2006:2006
+
+  msgpack:
+    build:
+      context: ./
+      dockerfile: ./msgpack/Dockerfile
+    command: python ./main.py
+    ports:
+      - 2007:2007
