@@ -9,7 +9,7 @@ The structure being used for serialization is a static Python dict that is defin
 1. Install [Docker](https://www.docker.com/)
 2. Clone this repository to your local machine
 3. Navigate to the repository's root directory (where `docker-compose.yml` is)
-4. Execute the following commands:
+4. Run the app by executing the following commands:
 ```console
 docker-compose build
 docker-compose up
